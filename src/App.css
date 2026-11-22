@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Falooda World Application Interactive Styles
+   ========================================================================== */
+
+/* ── Interactive Feature Cards ───────────────────────────────────────────── */
+.interactive-card {
+  position: relative;
+  padding: 2.25rem 2rem;
+  background: rgba(245, 235, 224, 0.03);
+  border: 1px solid rgba(245, 235, 224, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.interactive-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d4a373, #ffe2b3, transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+  background: rgba(245, 235, 224, 0.06);
+  border-color: rgba(224, 168, 102, 0.35);
+  box-shadow:
+    0 16px 36px -10px rgba(0, 0, 0, 0.7),
+    0 0 24px 2px rgba(212, 163, 115, 0.15);
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
+}
+
+.card-number {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  color: #d4a373;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-family: monospace;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.interactive-card:hover .card-number {
+  color: #ffd89b;
+  text-shadow: 0 0 10px rgba(255, 216, 155, 0.6);
+}
+
+.card-title {
+  margin: 0 0 0.85rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #faedcd;
+  letter-spacing: 0.05em;
+  font-family: 'Playfair Display', Georgia, serif;
+  transition: color 0.3s ease;
+}
+
+.interactive-card:hover .card-title {
+  color: #ffffff;
+}
+
+.card-desc {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(245, 235, 224, 0.65);
+  transition: color 0.3s ease;
+}
+
+.interactive-card:hover .card-desc {
+  color: rgba(245, 235, 224, 0.9);
+}
+
+/* ── Interactive Menu Dishes ─────────────────────────────────────────────── */
+.interactive-dish {
+  position: relative;
+  border-bottom: 1px solid rgba(245, 235, 224, 0.1);
+  padding: 1.25rem 0.75rem 2rem;
+  border-radius: 8px;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    padding-left 0.3s ease;
+}
+
+.interactive-dish:hover {
+  background: rgba(245, 235, 224, 0.03);
+  border-bottom-color: rgba(224, 168, 102, 0.35);
+  padding-left: 1.25rem;
+}
+
+.dish-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.dish-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #faedcd;
+  font-family: 'Playfair Display', Georgia, serif;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.interactive-dish:hover .dish-title {
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(255, 235, 200, 0.4);
+}
+
+.dish-price {
+  font-size: 1.15rem;
+  color: #d4a373;
+  font-weight: 600;
+  font-family: monospace;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.interactive-dish:hover .dish-price {
+  color: #ffd89b;
+  text-shadow: 0 0 12px rgba(255, 216, 155, 0.75);
+}
+
+.dish-notes {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: rgba(245, 235, 224, 0.65);
+  transition: color 0.3s ease;
+}
+
+.interactive-dish:hover .dish-notes {
+  color: rgba(245, 235, 224, 0.9);
+}
+
+/* ── Interactive Contact Items ───────────────────────────────────────────── */
+.interactive-contact-item {
+  color: #d4a373;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.interactive-contact-item:hover {
+  color: #ffd89b;
+  text-shadow: 0 0 12px rgba(255, 216, 155, 0.7);
+  transform: translateY(-1px);
+}

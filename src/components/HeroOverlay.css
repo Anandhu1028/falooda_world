@@ -1,0 +1,279 @@
+/* ==========================================================================
+   Hero Content Overlay (Falooda World Editorial Showcase)
+   Exact match to the reference image: Rich Dark Espresso & Caramel Text
+   ========================================================================== */
+
+.hero-scroll-track {
+  position: relative;
+  width: 100%;
+}
+
+.hero-scroll-runway {
+  height: 0;
+  pointer-events: none;
+}
+
+.hero-overlay-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(1.75rem, 5vw, 5.5rem);
+  box-sizing: border-box;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+/* ── Smooth Entrance Animation for Hero Text ─────────────────────────────── */
+.hero-overlay-container.is-revealed .hero-left-headline {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+}
+
+.hero-overlay-container.is-revealed .hero-left-desc {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+}
+
+.hero-overlay-container.is-revealed .hero-left-btn {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
+}
+
+.hero-overlay-container.is-revealed .hero-arch-wrapper {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+}
+
+.hero-overlay-container.is-revealed .hero-right-headline {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.28s forwards;
+}
+
+.hero-overlay-container.is-revealed .hero-right-btn {
+  animation: smoothTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+@keyframes smoothTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* ── Left Editorial Block ────────────────────────────────────────────────── */
+.hero-left-block {
+  max-width: 490px;
+  pointer-events: auto;
+  text-align: left;
+}
+
+.hero-left-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 5.2vw, 5.2rem);
+  font-weight: 900;
+  letter-spacing: -0.015em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0 0 1.4rem;
+  color: #2a1408; /* Deep Rich Espresso Chocolate */
+  cursor: default;
+  opacity: 0; /* Animated by smoothTextReveal */
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.hero-left-headline:hover {
+  transform: scale(1.01);
+}
+
+/* Caramel Gold Period Dot (.) */
+.hero-dot-accent {
+  display: inline-block;
+  color: #cb8d48; /* Caramel Amber Gold Dot */
+  font-weight: 900;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.hero-left-headline:hover .hero-dot-accent {
+  transform: scale(1.3) translateY(-2px);
+  color: #e59b36;
+}
+
+.hero-left-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(0.92rem, 1.15vw, 1.05rem);
+  line-height: 1.65;
+  color: #57351d; /* Warm Cocoa Brown */
+  margin: 0;
+  max-width: 370px;
+  font-weight: 400;
+  opacity: 0; /* Animated by smoothTextReveal */
+  transition: color 0.3s ease;
+}
+
+.hero-left-desc:hover {
+  color: #3b200e;
+}
+
+/* Call-to-action Button: Let's Sip → */
+.hero-left-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #2b1408; /* Dark Chocolate Pill */
+  color: #fbf5eb;     /* Warm Cream Text */
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.75rem 1.85rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -4px rgba(43, 20, 8, 0.45);
+  opacity: 0; /* Animated by smoothTextReveal */
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-left-btn:hover {
+  transform: translateY(-2px);
+  background: #1c0d05;
+  box-shadow: 0 12px 30px -4px rgba(43, 20, 8, 0.65);
+}
+
+.hero-left-btn .btn-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.hero-left-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Right Editorial Block ───────────────────────────────────────────────── */
+.hero-right-block {
+  max-width: 380px;
+  pointer-events: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+/* Curved Arched Tagline (Matches Reference Screenshot) */
+.hero-arch-wrapper {
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto 0.25rem;
+  color: #faeed9; /* Cream Ivory */
+  opacity: 0;     /* Animated by smoothTextReveal */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+}
+
+.hero-arch-wrapper:hover {
+  filter: drop-shadow(0 0 10px rgba(250, 238, 217, 0.6));
+  transform: scale(1.02);
+}
+
+.hero-arch-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.hero-arch-text {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 0.22em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.hero-right-headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #faeed9; /* Cream Ivory, matching screenshot */
+  text-align: center;
+  text-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.55),
+    0 2px 6px rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
+  cursor: default;
+  opacity: 0; /* Animated by smoothTextReveal */
+  transition: transform 0.3s ease;
+}
+
+.hero-right-headline:hover {
+  transform: scale(1.01);
+}
+
+/* Call-to-action Button: Explore Menu → */
+.hero-right-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(43, 20, 8, 0.3);
+  border: 1px solid rgba(250, 238, 217, 0.5); /* Cream Outline */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #faeed9;                              /* Cream Text */
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  padding: 0.7rem 1.65rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  opacity: 0; /* Animated by smoothTextReveal */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-right-btn:hover {
+  background: #faeed9;
+  color: #2a1408;
+  border-color: #faeed9;
+  box-shadow: 0 8px 24px -4px rgba(250, 238, 217, 0.45);
+  transform: translateY(-2px);
+}
+
+.hero-right-btn .btn-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.hero-right-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Responsive Behavior ─────────────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .hero-overlay-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 6.5rem 1.5rem 2rem;
+    gap: 2rem;
+    overflow-y: auto;
+  }
+
+  .hero-right-block {
+    margin-top: 0;
+  }
+}

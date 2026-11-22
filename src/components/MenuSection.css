@@ -1,0 +1,416 @@
+/* ==========================================================================
+   Menu / Our Desserts Section Styles - Falooda World
+   Editorial Luxury Interactive Dessert Menu
+   ========================================================================== */
+
+.menu-section {
+  position: relative;
+  width: 100%;
+  background: #24120D;
+  color: #FFF7EE;
+  padding: clamp(5rem, 8vw, 8rem) 0 clamp(4rem, 6vw, 6rem);
+  overflow: hidden;
+}
+
+/* Ambient dessert background lights */
+.menu-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.menu-orb-1 {
+  width: 500px;
+  height: 500px;
+  top: 10%;
+  left: -100px;
+  background: radial-gradient(circle, rgba(184, 121, 66, 0.18) 0%, transparent 70%);
+}
+
+.menu-orb-2 {
+  width: 600px;
+  height: 600px;
+  bottom: 20%;
+  right: -150px;
+  background: radial-gradient(circle, rgba(217, 173, 114, 0.14) 0%, transparent 70%);
+}
+
+.menu-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 3.5rem);
+}
+
+/* ── A. Menu Header ──────────────────────────────────────────────────────── */
+.menu-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto clamp(2.5rem, 5vw, 4rem);
+}
+
+.menu-eyebrow {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #D9AD72;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.menu-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+  font-weight: 800;
+  color: #FFF7EE;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.015em;
+}
+
+.menu-subtitle {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  color: #CBBAB0;
+  line-height: 1.7;
+  margin: 0 auto;
+}
+
+/* ── B. Category Filter Navigation ───────────────────────────────────────── */
+.menu-category-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.menu-cat-btn {
+  background: rgba(255, 247, 238, 0.05);
+  border: 1px solid rgba(217, 173, 114, 0.2);
+  color: #E6D7CD;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(8px);
+}
+
+.menu-cat-btn:hover {
+  background: rgba(217, 173, 114, 0.15);
+  color: #FFF7EE;
+  border-color: #D9AD72;
+  transform: translateY(-2px);
+}
+
+.menu-cat-btn.is-active {
+  background: #B87942;
+  color: #FFF7EE;
+  border-color: #B87942;
+  box-shadow: 0 8px 24px -4px rgba(184, 121, 66, 0.5);
+}
+
+/* ── C. Asymmetric Product Grid ──────────────────────────────────────────── */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+/* Base Card Styling */
+.menu-card {
+  background: #32190F;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(217, 173, 114, 0.15);
+  box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.menu-card:hover {
+  transform: translateY(-8px);
+  border-color: #D9AD72;
+  box-shadow: 0 28px 60px -15px rgba(184, 121, 66, 0.3);
+}
+
+/* Asymmetric Column Spans */
+.menu-card-featured {
+  grid-column: span 7;
+}
+
+.menu-card-tall {
+  grid-column: span 5;
+}
+
+.menu-card-standard {
+  grid-column: span 4;
+}
+
+.menu-card-wide {
+  grid-column: span 6;
+}
+
+/* Card Visual Image Wrap */
+.menu-card-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #1C0D07;
+}
+
+.menu-card-featured .menu-card-media {
+  height: clamp(260px, 32vw, 360px);
+}
+
+.menu-card-tall .menu-card-media {
+  height: clamp(280px, 35vw, 400px);
+}
+
+.menu-card-standard .menu-card-media {
+  height: clamp(200px, 25vw, 260px);
+}
+
+.menu-card-wide .menu-card-media {
+  height: clamp(240px, 28vw, 320px);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-card:hover .menu-card-img {
+  transform: scale(1.06);
+}
+
+.menu-card-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(36, 18, 13, 0.85);
+  color: #D9AD72;
+  border: 1px solid rgba(217, 173, 114, 0.4);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.menu-card-price {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #B87942;
+  color: #FFF7EE;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.4rem 0.95rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+
+/* Card Content Details */
+.menu-card-body {
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.menu-card-meta {
+  margin-bottom: 1.25rem;
+}
+
+.menu-card-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  font-weight: 700;
+  color: #FFF7EE;
+  margin: 0 0 0.5rem;
+}
+
+.menu-card-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #CBBAB0;
+  margin: 0;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(217, 173, 114, 0.15);
+}
+
+.menu-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #D9AD72;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.menu-card-action:hover {
+  color: #FFF7EE;
+}
+
+.menu-card-action span {
+  transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-card-action span {
+  transform: translateX(4px);
+}
+
+/* ── D. Featured Dessert Experience ──────────────────────────────────────── */
+.menu-featured-hero {
+  position: relative;
+  background: linear-gradient(135deg, #1A0B06 0%, #30170E 100%);
+  border-radius: 36px;
+  border: 1px solid rgba(217, 173, 114, 0.35);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  align-items: center;
+  box-shadow: 0 35px 80px -20px rgba(0, 0, 0, 0.6);
+}
+
+.menu-featured-left {
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  position: relative;
+  z-index: 2;
+}
+
+.menu-featured-tag {
+  color: #D9AD72;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.menu-featured-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 800;
+  color: #FFF7EE;
+  line-height: 1.12;
+  margin: 0 0 1.25rem;
+}
+
+.menu-featured-desc {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #EBDBC8;
+  margin: 0 0 2rem;
+  max-width: 480px;
+}
+
+.menu-featured-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2.4rem;
+  background: #B87942;
+  color: #FFF7EE;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-decoration: none;
+  box-shadow: 0 12px 28px -5px rgba(184, 121, 66, 0.5);
+  transition: all 0.35s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-featured-btn:hover {
+  background: #D9AD72;
+  color: #24120D;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px -6px rgba(217, 173, 114, 0.4);
+}
+
+.menu-featured-right {
+  position: relative;
+  height: 100%;
+  min-height: clamp(340px, 45vh, 480px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-featured-right-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Menu Layout */
+@media (max-width: 1024px) {
+  .menu-card-featured,
+  .menu-card-tall,
+  .menu-card-wide {
+    grid-column: span 6;
+  }
+  .menu-card-standard {
+    grid-column: span 6;
+  }
+  .menu-featured-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .menu-card-featured,
+  .menu-card-tall,
+  .menu-card-standard,
+  .menu-card-wide {
+    grid-column: span 12;
+  }
+  .menu-category-nav {
+    gap: 0.5rem;
+  }
+  .menu-cat-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.82rem;
+  }
+}
